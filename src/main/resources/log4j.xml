@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- log4j2ÅäÖÃÎÄ¼þÓëlog4j(1.x°æ±¾)ÓÐºÜ´ó²»Í¬ -->
-<!-- status ÈÕÖ¾¼¶±ð, TRACE < DEBUG < INFO < WARN < ERROR < FATAL -->
-<!-- monitorInterval Ã¿¸ô300ÃëÖØÐÂ¶ÁÈ¡ÅäÖÃÎÄ¼þ, ¿ÉÒÔ²»ÖØÆôÓ¦ÓÃµÄÇé¿öÏÂÐÞ¸ÄÅäÖÃ -->
+<!-- log4j2ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½log4j(1.xï¿½æ±¾)ï¿½ÐºÜ´ï¿½Í¬ -->
+<!-- status ï¿½ï¿½Ö¾ï¿½ï¿½ï¿½ï¿½, TRACE < DEBUG < INFO < WARN < ERROR < FATAL -->
+<!-- monitorInterval Ã¿ï¿½ï¿½300ï¿½ï¿½ï¿½ï¿½ï¿½Â¶ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½, ï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¸ï¿½ï¿½ï¿½ï¿½ï¿½ -->
 <Configuration status="DEBUG" monitorInterval="300">
 <Properties>
-<property name="LOG_PATH">/tt/app/comhensive/logs</property>
+<property name="LOG_PATH">/logs</property>
 <Property name="LOG_LAYOUT">%-5p [%d{yyyy-MM-dd HH:mm:ss}] %t [%c:%L] - %m%n</Property>
 </Properties>
 
 <Appenders>
-<!-- ¿ØÖÆÌ¨ -->
+<!-- ï¿½ï¿½ï¿½ï¿½Ì¨ -->
 <Console name="console" target="SYSTEM_OUT">
 <encoder>
-<!--×Ö·û±àÂë-->
-<charset>UTF-8</charset><!--´Ë´¦ÉèÖÃ×Ö·û¼¯-->
+<!--ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½-->
+<charset>UTF-8</charset><!--ï¿½Ë´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½-->
 </encoder>
 <PatternLayout pattern="${LOG_LAYOUT}" />
 </Console>
@@ -26,7 +26,7 @@ filePattern="${LOG_PATH}/$${date:yyyy-MM-dd}/root-%d{yyyy-MM-dd}-%i.log">
 </PatternLayout>
 <Policies>
 <TimeBasedTriggeringPolicy />
-<!-- Ö¸¶¨µ±ÎÄ¼þÌå»ý´óÓÚsizeÖ¸¶¨µÄÖµÊ±, ´¥·¢Rolling -->
+<!-- Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½sizeÖ¸ï¿½ï¿½ï¿½ï¿½ÖµÊ±, ï¿½ï¿½ï¿½ï¿½Rolling -->
 <SizeBasedTriggeringPolicy size="10 MB" />
 </Policies>
 <DefaultRolloverStrategy max="20" />
@@ -58,7 +58,7 @@ filePattern="${LOG_PATH}/$${date:yyyy-MM-dd}/project-%d{yyyy-MM-dd}-%i.log">
 </Appenders>
 
 <Loggers>
-<Logger name="com.inspur" level="DEBUG" additivity="false">
+<Logger name="com.mxf" level="DEBUG" additivity="false">
 <AppenderRef ref="file_project" />
 <AppenderRef ref="console" />
 </Logger>

@@ -11,11 +11,7 @@ import com.mxf.blog.common.ResponseCode;
 import com.mxf.blog.common.ResponseInfo;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -41,8 +37,17 @@ public class UserController {
         User user = userService.getOne(wrapper);
 
         return new Response<>(ResponseCode.SUCCESS, ResponseInfo.SUCCESS, user);
-
-
     }
 
+    @ApiOperation("用户注册")
+    @PostMapping("registerUser")
+    public Response<Boolean> registerUser(@RequestBody User user) {
+        boolean isSuccess = userService.save(user);
+        if (isSuccess) {
+            return new Response<>(ResponseCode.SUCCESS, ResponseInfo.SUCCESS, true);
+        } else {
+            return new Response<>(ResponseCode.SERVER_ERROR, ResponseInfo.ERROR, false);
+        }
+
+    }
 }

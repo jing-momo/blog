@@ -1,5 +1,7 @@
 package com.mxf.blog.blog.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import io.swagger.annotations.ApiModel;
@@ -24,6 +26,7 @@ import lombok.experimental.Accessors;
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
+    @TableId(value = "id", type = IdType.INPUT)
     private Long id;
 
     private String username;
