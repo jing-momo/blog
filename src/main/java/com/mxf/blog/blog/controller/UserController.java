@@ -50,4 +50,20 @@ public class UserController {
         }
 
     }
+
+    //用户登录
+    @ApiOperation("用户登录")
+    @PostMapping("loginUser")
+    public Response<User> loginUser(@RequestParam String username, String password) {
+        Wrapper<User> wrapper = new QueryWrapper<User>().eq("username", username).eq("password", password);
+        User user = userService.getOne(wrapper);
+        if (user == null) {
+            return new Response<>(1, "用户名或密码错误", null);
+        }else {
+            return new Response<>(ResponseCode.SUCCESS, "", user);
+        }
+
+    }
+
+
 }
