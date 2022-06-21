@@ -63,7 +63,7 @@
             <artifactId>mysql-connector-java</artifactId>
             <!--不去这个 配置文件中驱动会报红-->
             <!--<scope>runtime</scope>-->
-            <version>8.0.17</version>
+            <version>8.0.28</version>
         </dependency>
 <!--        mybatis plus-->
             <dependency>
